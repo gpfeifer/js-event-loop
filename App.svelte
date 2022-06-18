@@ -1,6 +1,7 @@
 <script>
-  import Button from "./Button.svelte";
-  import ButtonBlocking from "./ButtonBlocking.svelte";
+  import Button from "./Button-01.svelte";
+  import ButtonBlocking from "./Button-02-Blocking.svelte";
+  import ButtonCallback from "./Button-03-Callback.svelte";
 </script>
 
 <style>
@@ -16,6 +17,8 @@
 	<Button />
   <p/>
   <ButtonBlocking />
+  <ButtonCallback />
+  
   
 
 </main>
