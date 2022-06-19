@@ -3,17 +3,22 @@
 
 	function get() {
 	  const xhttp = new XMLHttpRequest();
-	  xhttp.onreadystatechange = function() {
-	    console.log("callback ", xhttp.status);
-	    if (xhttp.readyState == 4 && xhttp.status == 200) {
+	  xhttp.onload = function() {
+	    console.log("callback ", xhttp.status, xhttp.readyState);
+	    if (xhttp.status == 200) {
 	      text = "done";
 	    } else {
 	      text = "error";
 	    }
 	  };
-	  xhttp.open("GET", "warp-wait.fly.dev/wait/3", true);
+	  xhttp.open("GET", "https://warp-wait.fly.dev/wait/3", true);
 	  xhttp.send();
 	  console.log("send");
+	}
+
+	function click() {
+	  get();
+	  console.log("end of click");
 	}
 </script>
 
@@ -24,12 +29,13 @@
 	  border: none;
 	  padding: 8px 12px;
 	  border-radius: 2px;
+	  font-size: 22px;
 	}
 </style>
 
 <p>
 <button on:click={get}>
-  Callback
+  Callback {text}
 </button>
 </p>
 <p id="text">{text}</p>
