@@ -3,6 +3,7 @@
   import ButtonBlocking from "./Button-02-Blocking.svelte";
   import ButtonCallback from "./Button-03-Callback.svelte";
   import ButtonPromise from "./Button-04-Promise.svelte";
+  import ButtonMisc from "./Button-05-Misc.svelte";
 </script>
 
 <style>
@@ -20,6 +21,7 @@
   <ButtonBlocking />
   <ButtonCallback />
   <ButtonPromise />
+  <ButtonMisc />
   
   
 
