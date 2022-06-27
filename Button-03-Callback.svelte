@@ -10,8 +10,12 @@
 	    } else {
 	      text = "error";
 	    }
+	    let n = 0;
+	    while (n > 0) {
+	      n--;
+	    }
 	  };
-	  xhttp.open("GET", "https://warp-wait.fly.dev/wait/3", true);
+	  xhttp.open("GET", "https://warp-wait.fly.dev/wait/10", true);
 	  xhttp.send();
 	  console.log("send");
 	}

@@ -5,6 +5,17 @@
     console.log([asy(1), asy(2)]);
   }
 
+  function myWait(f, timeout) {
+    setTimeout(f, timeout);
+  }
+
+  function myAsyncWait(timeout) {
+    let promise = new Promise(function(resolve, reject) {
+      setTimeout(resolve, timeout);
+    });
+    return promise;
+  }
+
   async function asy(i) {
     let promise = new Promise(function(resolve, reject) {
       resolve(i * 2);
@@ -13,7 +24,9 @@
   }
 
   function handleClick() {
-    misc([1, 2, 3].map(n => asy(n)));
+    // misc([1, 2, 3].map(n => asy(n)));
+    // myWait(() => alert("Hi"), 2000);
+    myAsyncWait(3000).then(() => alert("Hi"));
   }
 </script>
 
